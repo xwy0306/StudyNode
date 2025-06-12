@@ -260,3 +260,129 @@ select distinct distinct_columns from table_name where [condition];
 >join对比
 
 ![[Pasted image 20250612191119.png]]
+
+| 操作         | 描述                     |
+| ---------- | ---------------------- |
+| inner join | 如果表中至少有一个匹配，则返回        |
+| left join  | 即使右表中没有匹配，也会从左表中返回所有的值 |
+| right join | 会从右表中返回所有的值，即使没有匹配     |
+
+>自连接
+
+==自己的表和自己的表连接，核心：一张表拆分为两张一样的表即可==
+```sql
+SELECT a.【学生姓名】
+
+FROM 【成绩表】 AS a, 【成绩表】 AS b
+
+WHERE a.【主键ID】 = b.【主键ID】
+
+AND a.【成绩】 >= b.【成绩】
+
+AND a.【课程名称】 = '语文'
+
+AND b.【课程名称】 = '数学';
+```
+
+查询了成绩表中语文成绩大于或等于数学成绩的学生姓名。通过为成绩表指定两个不同的别名_a_和_b_，我们可以在WHERE子句中使用这些别名来指定连接条件和比较逻辑。
+==注意事项：== 
+- 自连接可以是内连接也可以是外连接
+- 在自连接中，必须使用别名来区分表的不同实例，否则会导致语法错误。
+- 自连接的查询逻辑可能会比较复杂，需要仔细构造_WHERE_子句以确保正确的比较和关联。
+
+## 分页和排序
+### limit
+
+```sql
+limit a,b   --a为起始值，b为页面大小
+```
+
+> limit (n-1)\*pageSize, pageSize
+
+n:为总页数， pageSize：为页面大小
+### order by
+>降序排
+
+order by [column] desc
+
+>升序
+
+order by [column] asc
+
+## 子查询
+
+本质：在where语句中嵌套一个子查询
+
+# MySql常用函数
+>数学函数
+
+- `ABS(x)`   返回x的绝对值
+- `BIN(x)`   返回x的二进制（OCT返回八进制，HEX返回十六进制）
+- `CEILING(x)`   返回大于x的最小整数值
+- `EXP(x)`   返回值e（自然对数的底）的x次方
+- `FLOOR(x)`   返回小于x的最大整数值
+- `GREATEST(x1,x2,...,xn)`返回集合中最大的值
+- `LEAST(x1,x2,...,xn)`      返回集合中最小的值
+- `LN(x)`                    返回x的自然对数
+- `LOG(x,y)`返回x的以y为底的对数
+- `MOD(x,y)`                 返回x/y的模（余数）
+- `PI()`返回pi的值（圆周率）
+- `RAND()`返回０到１内的随机值,可以通过提供一个参数(种子)使RAND()随机数生成器生成一个指定的值。
+- `ROUND(x,y)`返回参数x的四舍五入的有y位小数的值
+- `SIGN(x)` 返回代表数字x的符号的值
+- `SQRT(x)` 返回一个数的平方根
+- `TRUNCATE(x,y)`            返回数字x截短为y位小数的结果
+
+>聚合函数(常用于GROUP BY从句的SELECT查询中)
+
+- `AVG(col)`返回指定列的平均值
+- `COUNT(col)`返回指定列中非NULL值的个数
+- `MIN(col)`返回指定列的最小值
+- `MAX(col)`返回指定列的最大值
+- `SUM(col)`返回指定列的所有值之和
+- `GROUP_CONCAT(col)` 返回由属于一组的列值连接组合而成的结果
+
+>字符串函数
+
+- `ASCII(char)`返回字符的ASCII码值
+- `BIT_LENGTH(str)`返回字符串的比特长度
+- `CONCAT(s1,s2...,sn)`将s1,s2...,sn连接成字符串
+- `CONCAT_WS(sep,s1,s2...,sn)`将s1,s2...,sn连接成字符串，并用sep字符间隔
+- `INSERT(str,x,y,instr)` 将字符串str从第x位置开始，y个字符长的子串替换为字符串instr，返回结果
+- `FIND_IN_SET(str,list)`分析逗号分隔的list列表，如果发现str，返回str在list中的位置
+- `LCASE(str)或LOWER(str)` 返回将字符串str中所有字符改变为小写后的结果
+- `LEFT(str,x)`返回字符串str中最左边的x个字符
+- `LENGTH(s)`返回字符串str中的字符数
+- `LTRIM(str)` 从字符串str中切掉开头的空格
+- `POSITION(substr,str)` 返回子串substr在字符串str中第一次出现的位置
+- `QUOTE(str)` 用反斜杠转义str中的单引号
+- `REPEAT(str,srchstr,rplcstr)`返回字符串str重复x次的结果
+- `REVERSE(str)` 返回颠倒字符串str的结果
+- `RIGHT(str,x)` 返回字符串str中最右边的x个字符
+- `RTRIM(str)` 返回字符串str尾部的空格
+- `STRCMP(s1,s2)`比较字符串s1和s2
+- `TRIM(str)`去除字符串首部和尾部的所有空格
+- `UCASE(str)`或`UPPER(str)` 返回将字符串str中所有字符转变为大写后的结果
+
+>日期和时间函数
+
+- `CURDATE()`或`CURRENT_DATE()` 返回当前的日期
+- `CURTIME()`或`CURRENT_TIME()` 返回当前的时间
+- `DATE_ADD(date,INTERVAL int keyword)`返回日期date加上间隔时间int的结果(int必须按照关键字进行格式化),如：`SELECTDATE_ADD(CURRENT_DATE,INTERVAL 6 MONTH);`
+- `DATE_FORMAT(date,fmt)`  依照指定的fmt格式格式化日期date值
+- `DATE_SUB(date,INTERVAL int keyword)`返回日期date加上间隔时间int的结果(int必须按照关键字进行格式化),如：`SELECTDATE_SUB(CURRENT_DATE,INTERVAL 6 MONTH);`
+- `DAYOFWEEK(date)`   返回date所代表的一星期中的第几天(1~7)
+- `DAYOFMONTH(date)`  返回date是一个月的第几天(1~31)
+- `DAYOFYEAR(date)`   返回date是一年的第几天(1~366)
+- `DAYNAME(date)`   返回date的星期名，如：`SELECT DAYNAME(CURRENT_DATE);`
+- `FROM_UNIXTIME(ts,fmt)`  根据指定的fmt格式，格式化UNIX时间戳ts
+- `HOUR(time)`   返回time的小时值(0~23)
+- `MINUTE(time)`   返回time的分钟值(0~59)
+- `MONTH(date)`   返回date的月份值(1~12)
+- `MONTHNAME(date)`   返回date的月份名，如：`SELECT MONTHNAME(CURRENT_DATE);`
+- `NOW()`    返回当前的日期和时间
+- `QUARTER(date)`   返回date在一年中的季度(1~4)，如`SELECT QUARTER(CURRENT_DATE);`
+- `WEEK(date)`   返回日期date为一年中第几周(0~53)
+- `YEAR(date)`   返回日期date的年份(1000~9999)
+
+## 事务
