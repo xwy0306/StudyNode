@@ -95,6 +95,12 @@ Ck
 Cz
 Construction
 Concat
+CEILING
+COUNT
+CONCAT
+CURDATE
+CURRENT
+CURTIME
 three
 the
 threats
@@ -307,6 +313,7 @@ datetime
 drop
 delete
 distinct
+date
 model
 marine
 mechanism
@@ -691,6 +698,7 @@ increment
 innodb
 insert
 into
+instr
 areas
 and
 also
@@ -902,6 +910,8 @@ constraint
 column
 concat
 columns
+col
+char
 has
 hazardous
 heighr
@@ -1328,6 +1338,12 @@ Mc
 MLQ
 Motivation
 MVC
+MOD
+MIN
+MAX
+MONTH
+MINUTE
+MONTHNAME
 swarm
 shared
 strategy
@@ -1447,6 +1463,11 @@ sql
 show
 selet
 select
+str
+sn
+sep
+substr
+srchstr
 In
 IHDR
 IDATx
@@ -1533,6 +1554,9 @@ Im
 Iaa
 IEND
 Information
+ID
+INSERT
+INTERVAL
 The
 TT
 THE
@@ -1628,6 +1652,9 @@ TLL
 There
 This
 Thus
+TRUNCATE
+TRIM
+TIME
 genes
 guided
 global
@@ -1793,6 +1820,7 @@ framework
 formed
 fraph
 foreign
+fmt
 while
 where
 with
@@ -1960,6 +1988,8 @@ li
 lZl
 large
 late
+limit
+list
 Problem
 Path
 Proposed
@@ -2050,6 +2080,8 @@ PGJ
 PKg
 PwyU
 Po
+PI
+POSITION
 AUV
 AUVs
 AOA
@@ -2141,6 +2173,11 @@ AIe
 As
 Akv
 AAAasaN
+AND
+ABS
+AVG
+ASCII
+ADD
 velocity
 vortex
 vector
@@ -2323,6 +2360,13 @@ LvJ
 LKV
 LVN
 LqM
+LEAST
+LOG
+LENGTH
+LCASE
+LOWER
+LEFT
+LTRIM
 radius
 relevant
 rsC
@@ -2417,6 +2461,7 @@ represented
 regarded
 rename
 references
+rplcstr
 Sailing
 SSA
 ST
@@ -2508,6 +2553,14 @@ Scalability
 Stage
 Sharing
 SQL
+SELECT
+SIGN
+SQRT
+SUM
+SET
+STRCMP
+SELECTDATE
+SUB
 HPQ
 HF
 HMM
@@ -2593,6 +2646,7 @@ HEx
 HR
 Ho
 Hyperparameters
+HOUR
 XEd
 Xox
 XWZ
@@ -2919,6 +2973,7 @@ YXD
 YBBh
 Ywi
 Yl
+YEAR
 QD
 Qo
 Qg
@@ -2999,6 +3054,8 @@ Qeb
 QJAuj
 QYs
 QyD
+QUOTE
+QUARTER
 GI
 Gh
 Gs
@@ -3090,6 +3147,8 @@ GGG
 Gvg
 Group
 Graph
+GREATEST
+GROUP
 qL
 qi
 qJ
@@ -3360,6 +3419,10 @@ FastMICE
 Framework
 Formation
 From
+FROM
+FLOOR
+FIND
+FORMAT
 kO
 kw
 ko
@@ -3439,6 +3502,7 @@ kaq
 kDU
 kcfP
 key
+keyword
 RS
 RF
 RaW
@@ -3528,6 +3592,12 @@ Rfl
 RSS
 Rslo
 RJu
+RAND
+ROUND
+REPEAT
+REVERSE
+RIGHT
+RTRIM
 NFL
 Nd
 Nl
@@ -3765,6 +3835,9 @@ UNTp
 UdDvp
 Ua
 UIL
+UCASE
+UPPER
+UNIXTIME
 JTJ
 JR
 JQ
@@ -4093,6 +4166,8 @@ BkC
 BjKJJ
 BG
 Bipartite
+BIN
+BIT
 Ddge
 DX
 Da
@@ -4186,6 +4261,11 @@ DiyY
 Dzw
 DtSy
 DeX
+DATE
+DAYOFWEEK
+DAYOFMONTH
+DAYOFYEAR
+DAYNAME
 WI
 WJqN
 WXE
@@ -4278,6 +4358,8 @@ Wa
 WP
 Wo
 WIe
+WHERE
+WEEK
 jK
 jb
 jKM
@@ -4450,6 +4532,7 @@ EB
 ES
 Early
 Each
+EXP
 VC
 VW
 Vo
